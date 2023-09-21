@@ -1,0 +1,52 @@
+body {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+main {
+  background-color: white;
+  flex: 2.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.turns {
+  padding: 10%;
+}
+
+.game-board-container {
+  display: flex;
+  flex-direction: row;
+  padding: 2%;
+}
+
+.game-board {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.game-board-cell {
+  height: 100px;
+  width: 100px;
+}
+
+#cell2, #cell5, #cell8 {
+  border-left: 10px solid black;
+  border-right: 10px solid black;
+}
+
+#cell4, #cell5, #cell6, #cell7, #cell8, #cell9 {
+  border-top: 10px solid black;
+}
+
+.sidebar {
+  background-color: yellow;
+  flex: 0.75;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2%;
+}
