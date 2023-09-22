@@ -29,7 +29,6 @@ window.addEventListener("load", function() {
 });
 gameBoard.addEventListener("click", function (event) {
   addMoves(event);
-  // trackTurns();
 });
 
 
