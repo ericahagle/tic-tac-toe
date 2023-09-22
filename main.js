@@ -38,13 +38,12 @@ function createPlayerTwo() {
 function savePlayers() {
   players.push(createPlayerOne());
   players.push(createPlayerTwo());
-  console.log("Players:", players);
 }
 
 function showPlayers() {
   playerOneSymbol.innerHTML = players[0].token;
   playerOneWins.innerHTML = `${players[0].wins} wins`;
-  
+
   playerTwoSymbol.innerHTML = players[1].token;
   playerTwoWins.innerHTML = `${players[1].wins} wins`;
 }
