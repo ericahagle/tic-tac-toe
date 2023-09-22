@@ -27,8 +27,9 @@ window.addEventListener("load", function() {
   whoseTurn = players[0];
   showPlayers();
 });
-gameBoard.addEventListener("click", function () {
-  trackTurns();
+gameBoard.addEventListener("click", function (event) {
+  addMoves(event);
+  // trackTurns();
 });
 
 
@@ -73,4 +74,12 @@ function trackTurns() {
     whoseTurnItIs.innerHTML = `It's ${players[0].token}'s turn`;
   }
   return whoseTurn;
+}
+
+function addMoves(event) {
+  if ((event.target.classList.contains("game-board-cell")) && (event.target.closest(".game-board-cell").innerHTML === "")) {
+    var gameBoardCell = event.target.closest(".game-board-cell");
+    gameBoardCell.innerHTML = whoseTurn.token;
+    trackTurns();
+  }
 }
