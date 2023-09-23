@@ -101,6 +101,12 @@ function addMoves(event) {
       showPlayers();
       return;
     }
+
+    if (detectDraw()) {
+      whoseTurnItIs.innerHTML = `It's a draw!`;
+      showPlayers();
+      return;
+    }
     trackTurns();
   }
 }
@@ -116,4 +122,13 @@ function detectWin(player) {
     }
   }
   return false;
+}
+
+function detectDraw() {
+  for (var i = 0; i < gameBoardCells.length; i++) {
+    if (gameBoardCells[i].innerHTML === "") {
+      return false;
+    }
+  }
+  return true;
 }
