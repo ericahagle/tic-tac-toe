@@ -19,6 +19,21 @@ var gameBoardCell9 = document.querySelector("#cell9");
 /* Data Model */
 var players = [];
 var whoseTurn;
+var gameBoardCells = [
+  gameBoardCell1, gameBoardCell2, gameBoardCell3,
+  gameBoardCell4, gameBoardCell5, gameBoardCell6,
+  gameBoardCell7, gameBoardCell8, gameBoardCell9
+];
+var winningCombos = [
+  [0,1,2],
+  [3,4,5],
+  [6,7,8],
+  [0,3,8],
+  [1,4,7],
+  [2,5,8],
+  [0,4,8],
+  [2,4,6]
+];
 
 
 /* Event Listeners */
@@ -79,6 +94,26 @@ function addMoves(event) {
   if ((event.target.classList.contains("game-board-cell")) && (event.target.closest(".game-board-cell").innerHTML === "")) {
     var gameBoardCell = event.target.closest(".game-board-cell");
     gameBoardCell.innerHTML = whoseTurn.token;
+
+    if (detectWin(whoseTurn)) {
+      whoseTurn.wins++;
+      whoseTurnItIs.innerHTML = `${whoseTurn.token} wins!`;
+      showPlayers();
+      return;
+    }
     trackTurns();
   }
+}
+
+function detectWin(player) {
+  for (var i = 0; i < winningCombos.length; i++) {
+    if (
+      gameBoardCells[winningCombos[i][0]].innerHTML === player.token &&
+      gameBoardCells[winningCombos[i][1]].innerHTML === player.token &&
+      gameBoardCells[winningCombos[i][2]].innerHTML === player.token
+    ) {
+      return true;
+    }
+  }
+  return false;
 }
