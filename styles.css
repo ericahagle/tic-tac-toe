@@ -50,3 +50,7 @@ main {
   align-items: center;
   padding: 2%;
 }
+
+.disabled {
+  pointer-events: none;
+}

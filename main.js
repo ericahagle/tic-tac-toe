@@ -19,6 +19,7 @@ var gameBoardCell9 = document.querySelector("#cell9");
 /* Data Model */
 var players = [];
 var whoseTurn;
+var whoStarts;
 var gameBoardCells = [
   gameBoardCell1, gameBoardCell2, gameBoardCell3,
   gameBoardCell4, gameBoardCell5, gameBoardCell6,
@@ -28,7 +29,7 @@ var winningCombos = [
   [0,1,2],
   [3,4,5],
   [6,7,8],
-  [0,3,8],
+  [0,3,6],
   [1,4,7],
   [2,5,8],
   [0,4,8],
@@ -40,6 +41,7 @@ var winningCombos = [
 window.addEventListener("load", function() {
   savePlayers();
   whoseTurn = players[0];
+  whoStarts = players[0];
   showPlayers();
 });
 gameBoard.addEventListener("click", function (event) {
@@ -79,6 +81,17 @@ function showPlayers() {
   playerTwoWins.innerHTML = `${players[1].wins} wins`;
 }
 
+function trackWhoStarts() {
+  if (whoStarts === players[0]) {
+    whoStarts = players[1];
+    whoseTurnItIs.innerHTML = `It's ${players[1].token}'s turn`;
+  } else {
+    whoStarts = players[0];
+    whoseTurnItIs.innerHTML = `It's ${players[0].token}'s turn`;
+  }
+  return whoStarts;
+}
+
 function trackTurns() {
   if (whoseTurn === players[0]) {
     whoseTurn = players[1];
@@ -99,12 +112,15 @@ function addMoves(event) {
       whoseTurn.wins++;
       whoseTurnItIs.innerHTML = `${whoseTurn.token} wins!`;
       showPlayers();
+      gameBoard.classList.add("disabled");
+      setTimeout(resetGameBoard, 5000);
       return;
     }
 
     if (detectDraw()) {
       whoseTurnItIs.innerHTML = `It's a draw!`;
       showPlayers();
+      setTimeout(resetGameBoard, 5000);
       return;
     }
     trackTurns();
@@ -131,4 +147,12 @@ function detectDraw() {
     }
   }
   return true;
+}
+
+function resetGameBoard() {
+  for (var i = 0; i < gameBoardCells.length; i++) {
+    gameBoardCells[i].innerHTML = "";
+    gameBoard.classList.remove("disabled");
+    trackWhoStarts();
+  }
 }
