@@ -84,9 +84,11 @@ function showPlayers() {
 function trackWhoStarts() {
   if (whoStarts === players[0]) {
     whoStarts = players[1];
+    whoseTurn = players[1];
     whoseTurnItIs.innerHTML = `It's ${players[1].token}'s turn`;
   } else {
     whoStarts = players[0];
+    whoseTurn = players[0];
     whoseTurnItIs.innerHTML = `It's ${players[0].token}'s turn`;
   }
   return whoStarts;
