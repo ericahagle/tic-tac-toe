@@ -29,7 +29,7 @@ var winningCombos = [
   [0,1,2],
   [3,4,5],
   [6,7,8],
-  [0,3,8],
+  [0,3,6],
   [1,4,7],
   [2,5,8],
   [0,4,8],
@@ -112,6 +112,7 @@ function addMoves(event) {
       whoseTurn.wins++;
       whoseTurnItIs.innerHTML = `${whoseTurn.token} wins!`;
       showPlayers();
+      gameBoard.classList.add("disabled");
       setTimeout(resetGameBoard, 5000);
       return;
     }
@@ -151,6 +152,7 @@ function detectDraw() {
 function resetGameBoard() {
   for (var i = 0; i < gameBoardCells.length; i++) {
     gameBoardCells[i].innerHTML = "";
+    gameBoard.classList.remove("disabled");
     trackWhoStarts();
   }
 }
