@@ -19,6 +19,7 @@ var gameBoardCell9 = document.querySelector("#cell9");
 /* Data Model */
 var players = [];
 var whoseTurn;
+var whoStarts;
 var gameBoardCells = [
   gameBoardCell1, gameBoardCell2, gameBoardCell3,
   gameBoardCell4, gameBoardCell5, gameBoardCell6,
@@ -40,6 +41,7 @@ var winningCombos = [
 window.addEventListener("load", function() {
   savePlayers();
   whoseTurn = players[0];
+  whoStarts = players[0];
   showPlayers();
 });
 gameBoard.addEventListener("click", function (event) {
@@ -77,6 +79,17 @@ function showPlayers() {
 
   playerTwoSymbol.innerHTML = players[1].token;
   playerTwoWins.innerHTML = `${players[1].wins} wins`;
+}
+
+function trackWhoStarts() {
+  if (whoStarts === players[0]) {
+    whoStarts = players[1];
+    whoseTurnItIs.innerHTML = `It's ${players[1].token}'s turn`;
+  } else {
+    whoStarts = players[0];
+    whoseTurnItIs.innerHTML = `It's ${players[0].token}'s turn`;
+  }
+  return whoStarts;
 }
 
 function trackTurns() {
@@ -138,6 +151,6 @@ function detectDraw() {
 function resetGameBoard() {
   for (var i = 0; i < gameBoardCells.length; i++) {
     gameBoardCells[i].innerHTML = "";
-    trackTurns();
+    trackWhoStarts();
   }
 }
