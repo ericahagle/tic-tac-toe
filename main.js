@@ -99,12 +99,14 @@ function addMoves(event) {
       whoseTurn.wins++;
       whoseTurnItIs.innerHTML = `${whoseTurn.token} wins!`;
       showPlayers();
+      setTimeout(resetGameBoard, 5000);
       return;
     }
 
     if (detectDraw()) {
       whoseTurnItIs.innerHTML = `It's a draw!`;
       showPlayers();
+      setTimeout(resetGameBoard, 5000);
       return;
     }
     trackTurns();
@@ -131,4 +133,11 @@ function detectDraw() {
     }
   }
   return true;
+}
+
+function resetGameBoard() {
+  for (var i = 0; i < gameBoardCells.length; i++) {
+    gameBoardCells[i].innerHTML = "";
+    trackTurns();
+  }
 }
