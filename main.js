@@ -50,27 +50,18 @@ gameBoard.addEventListener("click", function (event) {
 
 
 /* Functions */
-function createPlayerOne() {
+function createPlayer(id, token) {
   var player = {
-    id: "one",
-    token: "❌",
-    wins: 0
-  }
-  return player;
-}
-
-function createPlayerTwo() {
-  var player = {
-    id: "two",
-    token: "⭕️",
+    id: id,
+    token: token,
     wins: 0
   }
   return player;
 }
 
 function savePlayers() {
-  players.push(createPlayerOne());
-  players.push(createPlayerTwo());
+  players.push(createPlayer("one", "❌"));
+  players.push(createPlayer("two", "⭕️"));
 }
 
 function showPlayers() {
