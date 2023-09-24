@@ -1,7 +1,14 @@
+html {
+  font-family: 'Short Stack', cursive;
+}
+
 body {
   display: flex;
   flex-direction: row;
   margin: auto;
+  height: 93vh;
+  overflow: hidden;
+  font-size: 2.5em;
 }
 
 main {
@@ -11,6 +18,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 1.5em;
 }
 
 .turns {
@@ -31,6 +39,7 @@ main {
 .game-board-cell {
   height: 100px;
   width: 100px;
+  text-align: center;
 }
 
 #cell2, #cell5, #cell8 {
@@ -43,12 +52,18 @@ main {
 }
 
 .sidebar {
-  background-color: yellow;
+  /* background-color: rgb(251, 251, 152); */
+  background-image: linear-gradient(
+    to bottom,
+    yellow 33%,
+    red
+  );
   flex: 0.75;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2%;
+  height: 100%;
 }
 
 .disabled {
