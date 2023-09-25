@@ -76,25 +76,26 @@ function showPlayers() {
 function trackWhoStarts() {
   if (whoStarts === players[0]) {
     whoStarts = players[1];
-    whoseTurn = players[1];
-    whoseTurnItIs.innerHTML = `It's ${players[1].token}'s turn`;
   } else {
     whoStarts = players[0];
-    whoseTurn = players[0];
-    whoseTurnItIs.innerHTML = `It's ${players[0].token}'s turn`;
   }
+  whoseTurn = whoStarts;
+  updateTurn();
   return whoStarts;
 }
 
 function trackTurns() {
   if (whoseTurn === players[0]) {
     whoseTurn = players[1];
-    whoseTurnItIs.innerHTML = `It's ${players[1].token}'s turn`;
   } else {
     whoseTurn = players[0];
-    whoseTurnItIs.innerHTML = `It's ${players[0].token}'s turn`;
   }
+  updateTurn();
   return whoseTurn;
+}
+
+function updateTurn() {
+  whoseTurnItIs.innerHTML = `It's ${whoseTurn.token}'s turn`;
 }
 
 function addMoves(event) {
@@ -128,21 +129,25 @@ function detectDraw() {
 
 function showResults() {
   if (detectWin(whoseTurn)) {
-    whoseTurn.wins++;
-    whoseTurnItIs.innerHTML = `${whoseTurn.token} wins!`;
+    increaseWins();
     showPlayers();
+    whoseTurnItIs.innerHTML = `${whoseTurn.token} wins!`;
     gameBoard.classList.add("disabled");
     setTimeout(resetGameBoard, 5000);
     return;
   }
 
   if (detectDraw()) {
-    whoseTurnItIs.innerHTML = `It's a draw!`;
     showPlayers();
+    whoseTurnItIs.innerHTML = `It's a draw!`;
     setTimeout(resetGameBoard, 5000);
     return;
   }
   trackTurns();
+}
+
+function increaseWins() {
+  whoseTurn.wins++;
 }
 
 function resetGameBoard() {
