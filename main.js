@@ -46,31 +46,23 @@ window.addEventListener("load", function() {
 });
 gameBoard.addEventListener("click", function (event) {
   addMoves(event);
+  showResults();
 });
 
 
 /* Functions */
-function createPlayerOne() {
+function createPlayer(id, token) {
   var player = {
-    id: "one",
-    token: "❌",
-    wins: 0
-  }
-  return player;
-}
-
-function createPlayerTwo() {
-  var player = {
-    id: "two",
-    token: "⭕️",
+    id: id,
+    token: token,
     wins: 0
   }
   return player;
 }
 
 function savePlayers() {
-  players.push(createPlayerOne());
-  players.push(createPlayerTwo());
+  players.push(createPlayer("one", "❌"));
+  players.push(createPlayer("two", "⭕️"));
 }
 
 function showPlayers() {
@@ -84,48 +76,32 @@ function showPlayers() {
 function trackWhoStarts() {
   if (whoStarts === players[0]) {
     whoStarts = players[1];
-    whoseTurn = players[1];
-    whoseTurnItIs.innerHTML = `It's ${players[1].token}'s turn`;
   } else {
     whoStarts = players[0];
-    whoseTurn = players[0];
-    whoseTurnItIs.innerHTML = `It's ${players[0].token}'s turn`;
   }
+  whoseTurn = whoStarts;
+  updateTurn();
   return whoStarts;
 }
 
 function trackTurns() {
   if (whoseTurn === players[0]) {
     whoseTurn = players[1];
-    whoseTurnItIs.innerHTML = `It's ${players[1].token}'s turn`;
   } else {
     whoseTurn = players[0];
-    whoseTurnItIs.innerHTML = `It's ${players[0].token}'s turn`;
   }
+  updateTurn();
   return whoseTurn;
+}
+
+function updateTurn() {
+  whoseTurnItIs.innerHTML = `It's ${whoseTurn.token}'s turn`;
 }
 
 function addMoves(event) {
   if ((event.target.classList.contains("game-board-cell")) && (event.target.closest(".game-board-cell").innerHTML === "")) {
     var gameBoardCell = event.target.closest(".game-board-cell");
     gameBoardCell.innerHTML = whoseTurn.token;
-
-    if (detectWin(whoseTurn)) {
-      whoseTurn.wins++;
-      whoseTurnItIs.innerHTML = `${whoseTurn.token} wins!`;
-      showPlayers();
-      gameBoard.classList.add("disabled");
-      setTimeout(resetGameBoard, 5000);
-      return;
-    }
-
-    if (detectDraw()) {
-      whoseTurnItIs.innerHTML = `It's a draw!`;
-      showPlayers();
-      setTimeout(resetGameBoard, 5000);
-      return;
-    }
-    trackTurns();
   }
 }
 
@@ -149,6 +125,29 @@ function detectDraw() {
     }
   }
   return true;
+}
+
+function showResults() {
+  if (detectWin(whoseTurn)) {
+    increaseWins();
+    showPlayers();
+    whoseTurnItIs.innerHTML = `${whoseTurn.token} wins!`;
+    gameBoard.classList.add("disabled");
+    setTimeout(resetGameBoard, 3000);
+    return;
+  }
+
+  if (detectDraw()) {
+    showPlayers();
+    whoseTurnItIs.innerHTML = `It's a draw!`;
+    setTimeout(resetGameBoard, 3000);
+    return;
+  }
+  trackTurns();
+}
+
+function increaseWins() {
+  whoseTurn.wins++;
 }
 
 function resetGameBoard() {

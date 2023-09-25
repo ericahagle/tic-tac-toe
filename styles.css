@@ -2,11 +2,22 @@ html {
   font-family: 'Short Stack', cursive;
 }
 
-body {
+body, main, .sidebar, .game-board-container {
   display: flex;
+}
+
+body, .game-board-container {
   flex-direction: row;
+}
+
+main, .sidebar {
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
   margin: auto;
-  height: 93vh;
+  height: 100vh;
   overflow: hidden;
   font-size: 2.5em;
 }
@@ -14,10 +25,7 @@ body {
 main {
   background-color: white;
   flex: 2.5;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   font-size: 1.5em;
 }
 
@@ -25,9 +33,7 @@ main {
   padding: 10%;
 }
 
-.game-board-container {
-  display: flex;
-  flex-direction: row;
+.game-board-container, .sidebar {
   padding: 2%;
 }
 
@@ -42,27 +48,22 @@ main {
   text-align: center;
 }
 
-#cell2, #cell5, #cell8 {
+.horizontal {
   border-left: 10px solid black;
   border-right: 10px solid black;
 }
 
-#cell4, #cell5, #cell6, #cell7, #cell8, #cell9 {
+.vertical {
   border-top: 10px solid black;
 }
 
 .sidebar {
-  /* background-color: rgb(251, 251, 152); */
   background-image: linear-gradient(
     to bottom,
     yellow 33%,
     red
   );
   flex: 0.75;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2%;
   height: 100%;
 }
 

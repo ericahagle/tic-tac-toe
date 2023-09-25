@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <aside class="sidebar" id="leftSidebar">
+    <aside class="sidebar">
       <div class="symbol" id="p1Symbol"></div>
       <div class="wins" id="p1Wins"></div>
     </aside>
@@ -14,25 +14,25 @@
       <section class="turns" id="turns">It's ❌'s turn</section>
       <section class="game-board-container">
         <table class="game-board" id="gameBoard">
-          <tr class="table-row" id="topGameBoardRow">
+          <tr class="table-row">
             <td class="game-board-cell" id="cell1"></td>
-            <td class="game-board-cell" id="cell2"></td>
+            <td class="game-board-cell horizontal" id="cell2"></td>
             <td class="game-board-cell" id="cell3"></td>
           </tr>
-          <tr class="table-row" id="middleGameBoardRow">
+          <tr class="table-row vertical">
             <td class="game-board-cell" id="cell4"></td>
-            <td class="game-board-cell" id="cell5"></td>
+            <td class="game-board-cell horizontal" id="cell5"></td>
             <td class="game-board-cell" id="cell6"></td>
           </tr>
-          <tr class="table-row" id="bottomGameBoardRow">
+          <tr class="table-row vertical">
             <td class="game-board-cell" id="cell7"></td>
-            <td class="game-board-cell" id="cell8"></td>
+            <td class="game-board-cell horizontal" id="cell8"></td>
             <td class="game-board-cell" id="cell9"></td>
           </tr>
         </table>
       </section>
     </main>
-    <aside class="sidebar" id="rightSidebar">
+    <aside class="sidebar">
       <div class="symbol" id="p2Symbol"></div>
       <div class="wins" id="p2Wins"></div>
     </aside>
