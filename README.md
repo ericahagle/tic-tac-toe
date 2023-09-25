@@ -19,7 +19,8 @@ _Link for Pages view (if I make one) with go here_
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 
-_screenshot(s) and/or video(s) will go here_
+https://github.com/ericahagle/tic-tac-toe/assets/133910120/3f4dc984-3810-4c0a-a100-cffd368c45ca
+
 
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
