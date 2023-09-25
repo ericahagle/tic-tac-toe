@@ -133,14 +133,14 @@ function showResults() {
     showPlayers();
     whoseTurnItIs.innerHTML = `${whoseTurn.token} wins!`;
     gameBoard.classList.add("disabled");
-    setTimeout(resetGameBoard, 5000);
+    setTimeout(resetGameBoard, 3000);
     return;
   }
 
   if (detectDraw()) {
     showPlayers();
     whoseTurnItIs.innerHTML = `It's a draw!`;
-    setTimeout(resetGameBoard, 5000);
+    setTimeout(resetGameBoard, 3000);
     return;
   }
   trackTurns();
