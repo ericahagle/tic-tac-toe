@@ -101,22 +101,7 @@ function addMoves(event) {
     var gameBoardCell = event.target.closest(".game-board-cell");
     gameBoardCell.innerHTML = whoseTurn.token;
 
-    if (detectWin(whoseTurn)) {
-      whoseTurn.wins++;
-      whoseTurnItIs.innerHTML = `${whoseTurn.token} wins!`;
-      showPlayers();
-      gameBoard.classList.add("disabled");
-      setTimeout(resetGameBoard, 5000);
-      return;
-    }
-
-    if (detectDraw()) {
-      whoseTurnItIs.innerHTML = `It's a draw!`;
-      showPlayers();
-      setTimeout(resetGameBoard, 5000);
-      return;
-    }
-    trackTurns();
+    showResults();
   }
 }
 
@@ -140,6 +125,25 @@ function detectDraw() {
     }
   }
   return true;
+}
+
+function showResults() {
+  if (detectWin(whoseTurn)) {
+    whoseTurn.wins++;
+    whoseTurnItIs.innerHTML = `${whoseTurn.token} wins!`;
+    showPlayers();
+    gameBoard.classList.add("disabled");
+    setTimeout(resetGameBoard, 5000);
+    return;
+  }
+
+  if (detectDraw()) {
+    whoseTurnItIs.innerHTML = `It's a draw!`;
+    showPlayers();
+    setTimeout(resetGameBoard, 5000);
+    return;
+  }
+  trackTurns();
 }
 
 function resetGameBoard() {
