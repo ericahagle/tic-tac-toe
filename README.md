@@ -4,7 +4,23 @@ Turing Mod1 Final Solo Project
 ### Abstract:
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
 
-_description of tic tac toe game will go here_
+What we have here is a simple Tic Tac Toe game:
+- Each player in the game is controlled manually by the user
+- The top banner displays which player’s turn it is
+- Each player can only place their token in an empty square
+  - If a player attempts to place their token on a square that’s already occupied, it will not work
+  - It remains that player's turn
+- Once a player places their token, it becomes the other player’s turn
+  - The banner updates to communicate this
+- If a player wins (by connecting 3 horizontally, vertically, or diagonally)
+  - The top banner changes to declare the winner
+  - The declared winner's total wins updates
+- If a draw occurs (all squares are filled, but no win was detected)
+  - The top banner changes to declare a draw
+  - Neither player’s win count increases nor decreases
+- If either a win or draw occurs
+  - The game restarts automatically after 3 seconds
+  - The player who didn’t begin the previous match now is the first player to go in the new match
 
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
