@@ -42,12 +42,12 @@ main {
   text-align: center;
 }
 
-#cell2, #cell5, #cell8 {
+.horizontal {
   border-left: 10px solid black;
   border-right: 10px solid black;
 }
 
-#cell4, #cell5, #cell6, #cell7, #cell8, #cell9 {
+.vertical {
   border-top: 10px solid black;
 }
 
