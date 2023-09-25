@@ -9,17 +9,17 @@ _description of tic tac toe game will go here_
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
 
-_Instructions on how to clone to local and launch will go here_ </br>
-1. Step 1
-2. Step 2
-3. Step etc.
-
-_Link for Pages view (if I make one) with go here_
+To clone the repo and run it locally on your own machine: </br>
+1. Navigate to the repo in your browser: https://github.com/ericahagle/tic-tac-toe
+2. Clone the repo to the desired location on your machine
+3. `cd` into the new `tic-tac-toe` directory
+4. Type `open index.html` in your terminal and hit enter to launch the app in your default browser
+5. Have fun!
 
 ### Preview of App:
-[//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
+[//]: <> (Provide gifs or screenshots of your application - choose the "coolest" piece of functionality to show off.)
 
-_screenshot(s) and/or video(s) will go here_
+![](assets/tic-tac-toe.gif)
 
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
