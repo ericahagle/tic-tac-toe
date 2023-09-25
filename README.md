@@ -72,3 +72,6 @@ As of Tuesday, September 26, 2023, and the end of this project, I will be in the
 **Challenges:**
 - Honestly? Refactoring. Sheesh. That's probably the hardest part for me. I think it will get easier with time and practice, but right now, it's hard to move past the way I thought of something the first time.
 - I struggled a bit with splitting the data model updates and DOM updates. This is another area where I think I could refactor this in the future to be a better app. But right now, I just can't seem to find a better solution than what I already have. I think, if I have time, I might try to redo this during intermission and see if I can do better the second time.
+
+### Additional Notes:
+- A [GitHub Project](https://github.com/users/ericahagle/projects/3) was created to manage the flow of this project.
