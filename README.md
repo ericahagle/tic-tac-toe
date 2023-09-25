@@ -66,7 +66,9 @@ As of Tuesday, September 26, 2023, and the end of this project, I will be in the
 [//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
 
 **Wins:**
-- wins go here in bullets
+- I got it working and looking halfway decent! Honestly, that was a big win to me. It's nothing too fancy, but I think it looks pretty good and functions as expected.
+- I was able to implement some refactoring on my own, and then a little more after discussing with Nik what could possibly still be updated. I may not have gotten it perfect, but I was able to get it at least a little cleaner, DRYer, and more pure than it was!
 
 **Challenges:**
-- challenges go here in bullets
+- Honestly? Refactoring. Sheesh. That's probably the hardest part for me. I think it will get easier with time and practice, but right now, it's hard to move past the way I thought of something the first time.
+- I struggled a bit with splitting the data model updates and DOM updates. This is another area where I think I could refactor this in the future to be a better app. But right now, I just can't seem to find a better solution than what I already have. I think, if I have time, I might try to redo this during intermission and see if I can do better the second time.
