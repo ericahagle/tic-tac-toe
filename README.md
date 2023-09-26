@@ -75,3 +75,7 @@ As of Tuesday, September 26, 2023, and the end of this project, I will be in the
 
 ### Additional Notes:
 - A [GitHub Project](https://github.com/users/ericahagle/projects/3) was created to manage the flow of this project.
+- As a bonus, I've added a button at the bottom of the screen that allows a user to switch between Tic-Tac-Toe (a yellow/red color scheme with ❌ and ⭕️ tokens) and Tic-Tac-Rainbow (a rainbow color scheme with 🦄 and 🌈 tokens).
+  - The page title is also updated to reflect the change
+  - Users cannot switch views during a match; once a token is placed, the button is disabled until the board resets
+  - The function being used to accomplish this is pretty meaty. It could almost certainly be refactored, but for now, I'm just happy that it works!
