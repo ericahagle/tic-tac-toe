@@ -1,6 +1,6 @@
 /* Query Selectors */
-var playerOneSymbol = document.querySelector("#p1Symbol");
-var playerTwoSymbol = document.querySelector("#p2Symbol");
+var playerOneToken = document.querySelector("#p1Token");
+var playerTwoToken = document.querySelector("#p2Token");
 var playerOneWins = document.querySelector("#p1Wins");
 var playerTwoWins = document.querySelector("#p2Wins");
 var whoseTurnItIs = document.querySelector("#turns");
@@ -63,10 +63,10 @@ function savePlayers() {
 }
 
 function showPlayers() {
-  playerOneSymbol.innerHTML = players[0].token;
+  playerOneToken.innerHTML = players[0].token;
   playerOneWins.innerHTML = `${players[0].wins} wins`;
 
-  playerTwoSymbol.innerHTML = players[1].token;
+  playerTwoToken.innerHTML = players[1].token;
   playerTwoWins.innerHTML = `${players[1].wins} wins`;
 }
 
