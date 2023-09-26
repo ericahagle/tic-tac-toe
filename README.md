@@ -35,7 +35,7 @@ To clone the repo and run it locally on your own machine: </br>
 ### Preview of App:
 [//]: <> (Provide gifs, movs, or screenshots of your application - choose the "coolest" piece of functionality to show off.)
 
-https://github.com/ericahagle/tic-tac-toe/assets/133910120/021f9333-c6d8-4394-a1a3-c556e85da075
+https://github.com/ericahagle/tic-tac-toe/assets/133910120/7cc51cc2-0419-4efb-973b-137bc24a4af7
 
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
