@@ -87,8 +87,21 @@ button {
   );
 }
 
+.hohoho {
+  background-image: linear-gradient(
+    to bottom,
+    green 33%,
+    red
+  );
+}
+
 .orange {
   background-color: rgb(254, 181, 46);
+}
+
+.green {
+  background-color: rgb(0, 88, 0);
+  color: white;
 }
 
 .disabled {
