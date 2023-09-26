@@ -96,12 +96,26 @@ button {
   );
 }
 
+.snow {
+  background-image: linear-gradient(
+    to bottom,
+    lightblue,
+    white,
+    blue
+  );
+}
+
 .orange {
   background-color: rgb(254, 181, 46);
 }
 
 .green {
   background-color: rgb(0, 88, 0);
+  color: white;
+}
+
+.blue {
+  background-color: blue;
   color: white;
 }
 
