@@ -14,6 +14,8 @@ var gameBoardCell6 = document.querySelector("#cell6");
 var gameBoardCell7 = document.querySelector("#cell7");
 var gameBoardCell8 = document.querySelector("#cell8");
 var gameBoardCell9 = document.querySelector("#cell9");
+var viewSwitchButton = document.querySelector("#viewSwitchButton");
+var pageTitle = document.querySelector("#pageTitle");
 
 
 /* Data Model */
@@ -47,6 +49,7 @@ window.addEventListener("load", function() {
 gameBoard.addEventListener("click", function (event) {
   addMoves(event);
 });
+viewSwitchButton.addEventListener("click", switchView);
 
 
 /* Functions */
@@ -102,6 +105,7 @@ function addMoves(event) {
     var gameBoardCell = event.target.closest(".game-board-cell");
     gameBoardCell.innerHTML = whoseTurn.token;
     showResults();
+    document.getElementById("viewSwitchButton").disabled = true;
   }
 }
 
@@ -155,5 +159,46 @@ function resetGameBoard() {
     gameBoardCells[i].innerHTML = "";
     gameBoard.classList.remove("disabled");
     trackWhoStarts();
+    document.getElementById("viewSwitchButton").disabled = false;
+  }
+}
+
+function switchView() {
+  if (viewSwitchButton.innerText === "Tic-Tac-Rainbow") {
+    pageTitle.innerText = "Tic-Tac-Rainbow";
+    viewSwitchButton.innerText = "Tic-Tac-Toe";
+    viewSwitchButton.classList.add("orange");
+
+    players[0].token = "🦄";
+    players[1].token = "🌈";
+
+    var p1Sidebar = document.getElementById("p1Sidebar");
+    p1Sidebar.classList.remove("basic");
+    p1Sidebar.classList.add("rainbow");
+
+    var p2Sidebar = document.getElementById("p2Sidebar");
+    p2Sidebar.classList.remove("basic");
+    p2Sidebar.classList.add("rainbow");
+
+    showPlayers();
+    updateTurn();
+  } else {
+    pageTitle.innerText = "Tic-Tac-Toe";
+    viewSwitchButton.innerText = "Tic-Tac-Rainbow";
+    viewSwitchButton.classList.remove("orange");
+
+    players[0].token = "❌";
+    players[1].token = "⭕️";
+
+    var p1Sidebar = document.getElementById("p1Sidebar");
+    p1Sidebar.classList.add("basic");
+    p1Sidebar.classList.remove("rainbow");
+
+    var p2Sidebar = document.getElementById("p2Sidebar");
+    p2Sidebar.classList.add("basic");
+    p2Sidebar.classList.remove("rainbow");
+
+    showPlayers();
+    updateTurn();
   }
 }
