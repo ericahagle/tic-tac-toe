@@ -78,3 +78,5 @@ As of Tuesday, September 26, 2023, and the end of this project, I will be in the
   - The page title is also updated to reflect the change
   - Users cannot switch views during a match; once a token is placed, the button is disabled until the board resets
   - The function being used to accomplish this is pretty meaty. It could almost certainly be refactored, but for now, I'm just happy that it works!
+- As a bonus to the bonus, I've added another aesthetic option called Tic-Tac-HoHoHo (green/white/red color scheme with 🎅🏼 and 👹 tokens).
+  - The same button cycles through the three options.

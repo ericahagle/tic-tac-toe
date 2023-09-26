@@ -168,8 +168,8 @@ function resetGameBoard() {
 function switchView() {
   if (switchViewButton.innerText === "Tic-Tac-Rainbow") {
     pageTitle.innerText = "Tic-Tac-Rainbow";
-    switchViewButton.innerText = "Tic-Tac-Toe";
-    switchViewButton.classList.add("orange");
+    switchViewButton.innerText = "Tic-Tac-HoHoHo";
+    switchViewButton.classList.add("green");
 
     players[0].token = "🦄";
     players[1].token = "🌈";
@@ -184,6 +184,25 @@ function switchView() {
 
     showPlayers();
     updateTurn();
+  } else if (switchViewButton.innerText === "Tic-Tac-HoHoHo") {
+    pageTitle.innerText = "Tic-Tac-HoHoHo";
+    switchViewButton.innerText = "Tic-Tac-Toe";
+    switchViewButton.classList.remove("green");
+    switchViewButton.classList.add("orange");
+
+    players[0].token = "🎅🏼";
+    players[1].token = "👹";
+
+    var p1Sidebar = document.getElementById("p1Sidebar");
+    p1Sidebar.classList.remove("rainbow");
+    p1Sidebar.classList.add("hohoho");
+
+    var p2Sidebar = document.getElementById("p2Sidebar");
+    p2Sidebar.classList.remove("rainbow");
+    p2Sidebar.classList.add("hohoho");
+
+    showPlayers();
+    updateTurn();
   } else {
     pageTitle.innerText = "Tic-Tac-Toe";
     switchViewButton.innerText = "Tic-Tac-Rainbow";
@@ -194,11 +213,11 @@ function switchView() {
 
     var p1Sidebar = document.getElementById("p1Sidebar");
     p1Sidebar.classList.add("basic");
-    p1Sidebar.classList.remove("rainbow");
+    p1Sidebar.classList.remove("hohoho");
 
     var p2Sidebar = document.getElementById("p2Sidebar");
     p2Sidebar.classList.add("basic");
-    p2Sidebar.classList.remove("rainbow");
+    p2Sidebar.classList.remove("hohoho");
 
     showPlayers();
     updateTurn();
