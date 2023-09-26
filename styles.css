@@ -29,6 +29,11 @@ main {
   font-size: 1.5em;
 }
 
+button {
+  margin-top: 50px;
+  background-color: yellow;
+}
+
 .turns {
   padding: 10%;
 }
@@ -58,13 +63,32 @@ main {
 }
 
 .sidebar {
+  flex: 0.75;
+  height: 100%;
+}
+
+.basic {
   background-image: linear-gradient(
     to bottom,
     yellow 33%,
     red
   );
-  flex: 0.75;
-  height: 100%;
+}
+
+.rainbow {
+  background-image: linear-gradient(
+    to bottom,
+    yellow 15%,
+    green,
+    blue,
+    purple,
+    red,
+    hotpink
+  );
+}
+
+.orange {
+  background-color: rgb(254, 181, 46);
 }
 
 .disabled {

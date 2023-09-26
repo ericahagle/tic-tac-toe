@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Tic Tac Toe</title>
+    <title class="title" id="pageTitle">Tic Tac Toe</title>
     <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <aside class="sidebar">
+    <aside class="sidebar basic" id="p1Sidebar">
       <div class="symbol" id="p1Symbol"></div>
       <div class="wins" id="p1Wins"></div>
     </aside>
@@ -31,8 +31,9 @@
           </tr>
         </table>
       </section>
+      <button class="view-switch-button" id="viewSwitchButton">Tic-Tac-Rainbow</button>
     </main>
-    <aside class="sidebar">
+    <aside class="sidebar basic" id="p2Sidebar">
       <div class="symbol" id="p2Symbol"></div>
       <div class="wins" id="p2Wins"></div>
     </aside>
