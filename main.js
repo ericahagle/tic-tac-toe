@@ -1,6 +1,6 @@
 /* Query Selectors */
-var playerOneSymbol = document.querySelector("#p1Symbol");
-var playerTwoSymbol = document.querySelector("#p2Symbol");
+var playerOneToken = document.querySelector("#p1Token");
+var playerTwoToken = document.querySelector("#p2Token");
 var playerOneWins = document.querySelector("#p1Wins");
 var playerTwoWins = document.querySelector("#p2Wins");
 var whoseTurnItIs = document.querySelector("#turns");
@@ -14,7 +14,7 @@ var gameBoardCell6 = document.querySelector("#cell6");
 var gameBoardCell7 = document.querySelector("#cell7");
 var gameBoardCell8 = document.querySelector("#cell8");
 var gameBoardCell9 = document.querySelector("#cell9");
-var viewSwitchButton = document.querySelector("#viewSwitchButton");
+var switchViewButton = document.querySelector("#switchViewButton");
 var pageTitle = document.querySelector("#pageTitle");
 
 
@@ -40,16 +40,11 @@ var winningCombos = [
 
 
 /* Event Listeners */
-window.addEventListener("load", function() {
-  savePlayers();
-  whoseTurn = players[0];
-  whoStarts = players[0];
-  showPlayers();
-});
+window.addEventListener("load", initializeGame);
 gameBoard.addEventListener("click", function (event) {
   addMoves(event);
 });
-viewSwitchButton.addEventListener("click", switchView);
+switchViewButton.addEventListener("click", switchView);
 
 
 /* Functions */
@@ -68,11 +63,18 @@ function savePlayers() {
 }
 
 function showPlayers() {
-  playerOneSymbol.innerHTML = players[0].token;
+  playerOneToken.innerHTML = players[0].token;
   playerOneWins.innerHTML = `${players[0].wins} wins`;
 
-  playerTwoSymbol.innerHTML = players[1].token;
+  playerTwoToken.innerHTML = players[1].token;
   playerTwoWins.innerHTML = `${players[1].wins} wins`;
+}
+
+function initializeGame() {
+  savePlayers();
+  whoseTurn = players[0];
+  whoStarts = players[0];
+  showPlayers();
 }
 
 function trackWhoStarts() {
@@ -105,7 +107,7 @@ function addMoves(event) {
     var gameBoardCell = event.target.closest(".game-board-cell");
     gameBoardCell.innerHTML = whoseTurn.token;
     showResults();
-    document.getElementById("viewSwitchButton").disabled = true;
+    document.getElementById("switchViewButton").disabled = true;
   }
 }
 
@@ -159,15 +161,15 @@ function resetGameBoard() {
     gameBoardCells[i].innerHTML = "";
     gameBoard.classList.remove("disabled");
     trackWhoStarts();
-    document.getElementById("viewSwitchButton").disabled = false;
+    document.getElementById("switchViewButton").disabled = false;
   }
 }
 
 function switchView() {
-  if (viewSwitchButton.innerText === "Tic-Tac-Rainbow") {
+  if (switchViewButton.innerText === "Tic-Tac-Rainbow") {
     pageTitle.innerText = "Tic-Tac-Rainbow";
-    viewSwitchButton.innerText = "Tic-Tac-Toe";
-    viewSwitchButton.classList.add("orange");
+    switchViewButton.innerText = "Tic-Tac-Toe";
+    switchViewButton.classList.add("orange");
 
     players[0].token = "🦄";
     players[1].token = "🌈";
@@ -184,8 +186,8 @@ function switchView() {
     updateTurn();
   } else {
     pageTitle.innerText = "Tic-Tac-Toe";
-    viewSwitchButton.innerText = "Tic-Tac-Rainbow";
-    viewSwitchButton.classList.remove("orange");
+    switchViewButton.innerText = "Tic-Tac-Rainbow";
+    switchViewButton.classList.remove("orange");
 
     players[0].token = "❌";
     players[1].token = "⭕️";
