@@ -90,7 +90,8 @@ button {
 .hohoho {
   background-image: linear-gradient(
     to bottom,
-    green 33%,
+    green,
+    white,
     red
   );
 }
