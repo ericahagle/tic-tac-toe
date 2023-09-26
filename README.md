@@ -80,3 +80,5 @@ As of Tuesday, September 26, 2023, and the end of this project, I will be in the
   - The function being used to accomplish this is pretty meaty. It could almost certainly be refactored, but for now, I'm just happy that it works!
 - As a bonus to the bonus, I've added another aesthetic option called Tic-Tac-HoHoHo (green/white/red color scheme with 🎅🏼 and 👹 tokens).
   - The same button cycles through the three options.
+- As a bonus to the bonus... bonus, I've added one more aesthetic option (I promise, this is the last one... until I think up more puns) called Tic-Tac-Snow (lightblue/white/blue color scheme with ⛄️ and 🌞 tokens).
+  - Again, the same button is used to cycle through all 4 options.
