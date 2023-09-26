@@ -40,12 +40,7 @@ var winningCombos = [
 
 
 /* Event Listeners */
-window.addEventListener("load", function() {
-  savePlayers();
-  whoseTurn = players[0];
-  whoStarts = players[0];
-  showPlayers();
-});
+window.addEventListener("load", initializeGame);
 gameBoard.addEventListener("click", function (event) {
   addMoves(event);
 });
@@ -73,6 +68,13 @@ function showPlayers() {
 
   playerTwoSymbol.innerHTML = players[1].token;
   playerTwoWins.innerHTML = `${players[1].wins} wins`;
+}
+
+function initializeGame() {
+  savePlayers();
+  whoseTurn = players[0];
+  whoStarts = players[0];
+  showPlayers();
 }
 
 function trackWhoStarts() {
