@@ -46,7 +46,6 @@ window.addEventListener("load", function() {
 });
 gameBoard.addEventListener("click", function (event) {
   addMoves(event);
-  showResults();
 });
 
 
@@ -102,6 +101,7 @@ function addMoves(event) {
   if ((event.target.classList.contains("game-board-cell")) && (event.target.closest(".game-board-cell").innerHTML === "")) {
     var gameBoardCell = event.target.closest(".game-board-cell");
     gameBoardCell.innerHTML = whoseTurn.token;
+    showResults();
   }
 }
 
